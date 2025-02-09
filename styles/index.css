@@ -13,7 +13,6 @@ body {
 }
 
 .topbar {
-    text-align: center;
     background-color: black;
     width: 100%;
     height: 80px;
@@ -26,7 +25,7 @@ body {
 .welcome {
     margin: 0;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     gap: 0;
 }
@@ -34,10 +33,19 @@ body {
 .logo{
     position: relative;
     width: 45%;
-    left: 25px;
+    left: 25px; 
 }
 
-.graphic {
+.icon {
+    position: relative;
+    border-radius: 260px;
+    border: #008F4A 2px solid;
+    width: clamp(120px, 25vw, 250px);
+    left: 55%;
+    top: 5vh;
+    rotate: 15deg;
+}
+.grid1 {
     position: relative;
     height: clamp(200px, 25vw, 200px);
     height: clamp(200px, 25vw, 200px);
@@ -46,41 +54,163 @@ body {
     left: 6vw;
 }
 
-#primaryButton {
+.grid2 {
+    position: relative;
+    height: clamp(120px, 25vw, 250px);
+    height: clamp(120px, 25vw, 250px);
+    z-index: -1;
+    top: 20vh;
+    left: 63%;
+}
+
+.info {
+    position: absolute;
+    display: block;
+    width: 90%;
+    height: 100vh;
+}
+
+.contact {
+    position: absolute;
+    display: block;
+    text-align: center;
+    width: 90%;
+    height: 100vh;
+    top: 150vh;
+}
+
+.contactTitle {
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: clamp(36px, 5vw, 50px);
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.contactButtons {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+}
+
+.about {
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: clamp(36px, 5vw, 50px);
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.about::after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 20%;
+    height: 15px;
+    top: -1vh;
+    left: 25%;
+    transform: translateX(50%);
+    border-radius: 15px;
+    background-color: #21E084;
+}
+
+.paragraph {
+    position: relative;
+    width: 42%;
+    font-size: clamp(12px, 1vw, 20px);
+    font-family: 'Poppins';
+    color: #B0B0B0;
+    text-align: left;
+    top: -25vh;
+    left: 15%;
+}
+
+.contactParagraph {
+    position: relative;
+    width: 42%;
+    font-size: clamp(12px, 1vw, 20px);
+    font-family: 'Poppins';
+    color: #B0B0B0;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.primaryButton {
     background-color: #21E084;
     color: black;
     border: #21E084 2px solid;
     border-radius: 15px;
     text-align: center;
+    line-height: 60px;
+    text-decoration: none;
     font-family: 'Poppins';
     font-size: 26px;
     height: 60px;
     width: 180px;
+    transition: transform 0.1s ease, text-shadow 0.1s ease;
 }
 
-#secondaryButton {
+.secondaryButton {
     background-color: #000000;
     color: #21E084;
     border: #21E084 2px solid;
     border-radius: 15px;
     text-align: center;
+    line-height: 60px;
+    text-decoration: none;
     font-family: 'Poppins';
     font-size: 26px;
     height: 60px;
     width: 180px;
+    transition: transform 0.1s ease, text-shadow 0.1s ease;
+}
+
+.secondaryButton.hover, .secondaryButton:hover {
+    background-color: #000000;
+    color: #21E084;
+    border: #21E084 2px dashed;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 60px;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-size: 26px;
+    height: 60px;
+    width: 180px;
+    /* neon effect */
+    text-shadow: 0 0 5px #008F4A,  0 0 10px #087942;
+    transform: scale(1.05);
+}
+
+.primaryButton.hover, .primaryButton:hover {
+    background-color: #022e19;
+    color: white;
+    border: #21E084 2px solid;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 60px;
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-size: 26px;
+    height: 60px;
+    width: 180px;
+    /* neon effect */
+    text-shadow: 0 0 5px #008F4A,  0 0 10px #087942;
+    transform: scale(1.05);
 }
 
 .buttons {
     gap: 15px;
     display: flex;
-}
-
-.gitButton {
-    position: relative;
-}
-
-.projButton {
-    position: relative;
+    left: -5%;
 }
 
 .greet {
@@ -125,17 +255,45 @@ body {
     box-shadow: 0 0 25px #008F4A,  0 0 50px #087942;
 }
 
-.qoute {
+.quote {
     position: relative;
     color: #B0B0B0;
-    left: clamp(5vw,10%,5vw);
-    width: 40%;
-    padding: clamp(15px,5%,50px);
+    width: 90%;
     font-family: 'Poppins';
-    font-size: min(1.5vw, 20px);
+    left: -5%;
 }
 
-#highlight { color: white; }
+.qouteContainer {
+    width: 40%;
+    position: relative;
+    left: 10%;
+    top: 15%;
+    font-size: clamp(12px, 1vw, 20px);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.ghighlight { color: #21E084; font-weight: 550;}
+.highlight { color: white; }
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #111111;
+    border-radius: 10px;
+    border: none;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #087942;
+  }
 
 @media (max-width: 730px) {
     body {
@@ -147,10 +305,12 @@ body {
 
     .greet {
         text-align: center;
-        left: 15vw;
+        left: 12vw;
+        top: 12vh;
     }
 
     .styleFont {
+        top: -15vh;
         margin: 0;
         left: 20vw;
         font-size: 200px;
@@ -159,24 +319,114 @@ body {
         width: min(350px, 75vw);
     }
 
-    .graphic {
+    .grid1 {
         position: relative;
         width: 120px;
         top: 2vh;
         left: 10vw;
     }
 
+    .grid2 {
+        position: relative;
+        width: 100px;
+        top: 30vh;
+        left: 70vw;
+        z-index: 1;
+    }
+
+    .icon {
+        position: relative;
+        width: 250px;
+        top: 50vh;
+        left: 5%;
+    }
+
     .qoute {
+        position: absolute;
         margin: 0;
-        width: 90%;
+        padding: 0;
+        width: 100%;
         left: 0;
-        top: -15vh;
+        top: -50vh;
         font-size: 12px;
+    }
+
+    .qouteContainer {
+        width: 90%;
+        position: relative;
+        left: 15%;
+        font-size: clamp(8px, 1vw, 12px);
+        top: -15vh;
+    }    
+
+    .info {
+        padding-top: 20%;
+        width: 100%;
+    }
+
+    .paragraph {
+        position: relative;
+        width: 80%;
+        top: -35vh;
+        left: 10%;
+    }
+
+    .contactParagraph {
+        position: absolute;
+        width: 80%;
+        font-size: clamp(12px, 1vw, 20px);
+        font-family: 'Poppins';
+        color: #B0B0B0;
+        text-align: center;
+        left: 55%;
+        transform: translateX(-50%);
+    }
+
+    .contact {
+        position: absolute;
+        display: flex;
+        text-align: center;
+        width: 90%;
+        height: 100vh;
+        top: 190vh;
+    }   
+
+    .contactButtons {
+        display: flex;
+    }
+    
+    .buttons {
+        position: absolute;
+        left: -5%;
+    }
+
+    .primaryButton {
+        font-size: 24px;
+        height: 60px;
+        width: 160px;
+    }
+    
+    .secondaryButton {
+        font-size: 24px;
+        height: 60px;
+        width: 160px;
     }
 }
 
 @media (min-width: 731px) and (max-width: 880px) {
     body {
         margin: 0 50px 0 50px;
+    }
+
+    .paragraph {
+        position: relative;
+        left: 5%;
+    }
+    
+    .icon {
+        left: 35%;
+    }
+    .grid2 {
+        left: 55%;
     }
 }

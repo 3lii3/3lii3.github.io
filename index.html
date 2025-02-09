@@ -3,28 +3,60 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles/index.css">
+        <link rel="icon" href="styles/iconround.png">
     </head>
-    <title>(WIP) Work In Progress</title>
+    <title>Ali - Software Engineer.</title>
     <body>
         <div class="topbar">
-            <img src="styles/logo.png" style="height: 80px;">
+            <img src="styles/logo.png" style="position: absolute; height: 100%; left: 50%; transform: translateX(-50%);">
         </div>
         <!-- Main page/show -->
         <div class="welcome">
-            <!-- Displays my logo -->
+            <!-- Welcome screen -->
             <div class="logo">
                 <h1 class="greet">Hey there! I'm-</h1>
-                <img src="styles/grid.svg" class="graphic">
+                <img src="styles/grid.svg" class="grid1">
                 <h1 class="styleFont">3li</h1>
             </div>
-            <!-- Displays text -->
-            <div class="qoute">
-                <h1><span id="highlight">Software Engineer. </span>Self-taught focused on building practical, efficient solutions.</h1>
+            <!-- Links -->
+            <div class="qouteContainer">
+                <h1 class="quote"><span class="highlight">Software Engineer.</span> Self-taught focused on building practical, efficient solutions.</h1>
                 <div class="buttons">
-                    <button class="gitButton" id="primaryButton" onclick="window.location.href=window.location.origin + '/projects'" >Projects</button>
-                    <button class="projButton" id="secondaryButton" onclick="https://github.com/3lii3'">GitHub</button>
+                    <a href="page/projects.html" class="primaryButton">Projects</a>
+                    <a href="https://github.com/3lii3" target="_blank" class="secondaryButton">GitHub</a>
                 </div>
             </div>
+        </div>
+        <!-- "About me" page/section -->
+        <div class="info">
+            <h1 class="about">About me</h1>
+            <img src="styles/grid.svg" class="grid2">
+            <img src="styles/icon.png" class="icon">
+            <p class="paragraph"> 
+                <span style="font-weight: 600;">Greetings!</span><br/> 
+                I'm Ali, and my passion for understanding how computers work and building programs has driven me since a young age. <br/>
+                <br/>
+                I've been hooked on computers since 4th grade, starting with Scratch to create my own games and animations. Around the same time, I also began experimenting with <span class="ghighlight">Arduino</span> projects, one of which was a <span class="ghighlight">Bluetooth-controlled</span> car I built from scratch. <br/>
+                <br/>
+                Fast forward, I started learning <span class="ghighlight">Python</span> and <span class="ghighlight">HTML</span>, while developing a strong interest in software engineering and building simple yet innovative designs.
+                Along the way, I also learned <span class="ghighlight">Java</span> to create custom plugins for <span class="ghighlight">Minecraft</span> using <span class="ghighlight">SpigotMC</span>, deepening my programming skills in a real-world context.<br/>
+                <br/>
+                Currently, I'm focusing on creating <span class="ghighlight">open-source</span> projects and <span class="ghighlight">programming automation</span> using various languages.
+            </p>            
+        </div>
+        <div class="contact">
+            <h1 class="contactTitle">Be In Touch.</h1>
+            <p class="contactParagraph">
+                I'm currently focusing on <span class="ghighlight">Java</span> & <span class="ghighlight">Python</span>, <br>
+                Feel free to get in touch and talk about your projects.
+            </p>
+            <!--
+            <div class="contactButtons">
+                <a href="page/contact.html" class="secondaryButton">Email</a>
+                <a href="https://github.com/3lii3" target="_blank" class="secondaryButton">GitHub</a>
+                <a href="page/contact.html" class="secondaryButton">Resume</a>
+            </div>
+            -->
         </div>
     </body>
 </html>
