@@ -10,6 +10,8 @@
 body {
     background-color: black;
     margin: 0 clamp(75px, 5%, 150px) 0 clamp(75px, 5%, 150px);
+    height: auto;
+    overflow-x: hidden;
 }
 
 .topbar {
@@ -17,7 +19,7 @@ body {
     width: 100%;
     height: 80px;
     top: 0;
-    position: sticky;
+    position: fixed;
     border-bottom: 1px solid #3F3F3F;
     z-index: 2;
 }
@@ -71,17 +73,19 @@ body {
 }
 
 .contact {
-    position: absolute;
-    display: block;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     width: 90%;
-    height: 100vh;
-    top: 150vh;
+    top: 80vh;
+    margin: 50px auto;
+    min-height: fit-content;
 }
 
 .contactTitle {
-    padding-left: 5%;
-    padding-right: 5%;
+    width: 100%;
+    align-self: flex-start;
     text-align: center;
     font-family: 'Poppins';
     font-size: clamp(36px, 5vw, 50px);
@@ -92,10 +96,10 @@ body {
 .contactButtons {
     position: relative;
     display: flex;
+    justify-content: center;
+    align-content: center;
     gap: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
+    width: 100%;
 }
 
 .about {
@@ -134,13 +138,12 @@ body {
 
 .contactParagraph {
     position: relative;
-    width: 42%;
+    align-self: center;
+    width: 75%;
     font-size: clamp(12px, 1vw, 20px);
     font-family: 'Poppins';
     color: #B0B0B0;
     text-align: center;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .primaryButton {
@@ -329,7 +332,7 @@ body {
     .grid2 {
         position: relative;
         width: 100px;
-        top: 30vh;
+        top: 35vh;
         left: 70vw;
         z-index: 1;
     }
@@ -337,7 +340,7 @@ body {
     .icon {
         position: relative;
         width: 250px;
-        top: 50vh;
+        top: 55vh;
         left: 5%;
     }
 
@@ -360,39 +363,37 @@ body {
     }    
 
     .info {
-        padding-top: 20%;
+        position: relative;
         width: 100%;
+        min-height: 100vh;
+        margin-bottom: 50px;
     }
 
     .paragraph {
         position: relative;
         width: 80%;
-        top: -35vh;
+        top: -30vh;
         left: 10%;
     }
 
     .contactParagraph {
-        position: absolute;
+        position: relative;
+        align-self: center;
         width: 80%;
         font-size: clamp(12px, 1vw, 20px);
         font-family: 'Poppins';
         color: #B0B0B0;
         text-align: center;
-        left: 55%;
-        transform: translateX(-50%);
     }
 
     .contact {
-        position: absolute;
-        display: flex;
-        text-align: center;
-        width: 90%;
-        height: 100vh;
-        top: 190vh;
+        top: 0;
     }   
 
     .contactButtons {
         display: flex;
+        justify-content: center;
+        gap: 1vw;
     }
     
     .buttons {
@@ -401,15 +402,17 @@ body {
     }
 
     .primaryButton {
-        font-size: 24px;
-        height: 60px;
-        width: 160px;
+        font-size: 20px;
+        line-height: 40px;
+        height: 40px;
+        width: 30vw;
     }
     
     .secondaryButton {
-        font-size: 24px;
-        height: 60px;
-        width: 160px;
+        font-size: 20px;
+        line-height: 40px;
+        height: 40px;
+        width: 30vw;
     }
 }
 
