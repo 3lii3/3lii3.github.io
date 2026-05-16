@@ -335,7 +335,7 @@ footer {
     background-color: var(--secondary-color);
     border-top: 1px solid var(--accent-color);
     display: flex;
-    min-height: 5em;
+    min-height: 8em;
 }
 
 footer nav {
@@ -356,7 +356,7 @@ footer p {
 footer nav a {
     text-decoration: none;
     color: var(--accent-color);
-    font-size: clamp(0.7rem,5vw,1rem);
+    font-size: clamp(0.7rem,5vw,1.2rem);
     font-family: 'Poppins';
     font-weight: normal;
 }
