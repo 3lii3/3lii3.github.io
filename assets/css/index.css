@@ -1,0 +1,329 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+
+@font-face {
+    font-family: 'Bukhari Script';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Bukhari Script'), url('https://fonts.cdnfonts.com/s/57472/BukhariScript-Regular.woff') format('woff');
+}
+
+#big-logo p {
+    margin: 0;
+}
+
+#big-logo span {
+    color: var(--accent-color-dark);
+}
+
+#big-logo {
+    display: flexbox;
+    position: relative; /* anchor for ::before */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: var(--accent-color);
+    font-family: 'Bukhari Script';
+    font-size: 12em;
+    text-shadow: 0.25rem 0.5rem 2rem black;
+    z-index: 3;
+    transition: 100ms ease font-size;
+    flex-shrink: 0;
+    width: 55%;
+}
+
+#big-logo::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 1em;
+    transform: translateX(-50%);
+    width: 3em;
+    height: 0.15em;
+    border-radius: 0.1em;
+    background-color: rgb(254, 254, 254);
+    box-shadow:
+        0 0 12px 2px var(--accent-color),
+        0 0 6px 6px var(--accent-color-25);
+    z-index: -1;
+}
+
+#big-logo::after {
+    content: "";
+    display: none;
+}
+
+#hero {
+    display: flex;
+    flex-direction: row;
+    gap: max(5%, 4rem);
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#hero-text {
+    display: flexbox;
+    flex-shrink: 0;
+    width: 40%;
+    font-size: 2.5rem;
+}
+
+#hook {
+    text-align: center;
+    font-size: clamp(0.5rem,2vw,1rem);
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
+#hook h2 {
+    font-weight: normal;
+}
+
+#hook ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2vw;
+    justify-content: center;
+}
+
+#hook li{
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: calc-size(fit-content, size + 2%);
+}
+
+#hook button {
+    width: 100%;
+}
+
+#hook img {
+    height: 1em;
+    padding-right: 2.5%;
+}
+
+.header-text {
+    font-size: clamp(0.5rem,6vw,3rem);
+    width: fit-content;
+    height: clamp(0.8rem,10vw,5rem);
+    justify-content: center;
+    padding: 0 5% 0 5%;
+    align-items: start;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    z-index: 2;
+
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.header-text::before {
+    content: "";
+    position: absolute;
+    top: clamp(0.5rem,6vw,3rem);
+    width: 50%;
+    transform: translateX(-30%);
+    height: clamp(0.25rem,3vw,1rem);
+    border-radius: 0.5rem;
+    background-color: var(--accent-color);
+    z-index: -1;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects a::after {
+    content: "";
+    display: none;
+    position: unset;
+    background-color: unset;
+    box-shadow: none;
+    text-shadow: none;
+    transform-origin: center;
+    transform: scale(0);
+    transition: none;
+}
+
+#projects a:hover::after {
+    transform: scale(1);
+    background-color: var(--accent-color);
+    box-shadow: none;
+}
+
+#projects a {
+    color: unset;
+    text-shadow: none;
+}
+
+#projects a:hover {
+    color: none;
+    text-shadow: none;
+}
+
+#projects li:hover {
+    border: solid 2px var(--accent-color-dark);
+    transition: 250ms border-color ease-in-out, 250ms border-size ease-in-out;
+}
+#projects article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects ul {
+    list-style: none;
+    padding: 0;
+    padding-bottom: 25%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: clamp(1rem, 10%, 2rem);
+    min-width: 100%;
+}
+
+#projects li {
+    background-color: var(--gray-color);
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 5px;
+    --y-offset: 0px;
+    border: solid 1px var(--light-gray-color);
+    transition: 250ms border-color ease-in-out, 250ms border-size ease-in-out;
+}
+
+#projects li:nth-child(even) {
+    --y-offset: 50%;
+}
+
+#projects h1 {
+    font-size: clamp(1rem,3vw,1.5rem);
+    color: var(--text-color-bright);
+    font-weight: normal;
+    text-align: left;
+    margin: 0;
+    padding: 0 0 0 1rem;
+}
+
+#projects hr {
+    margin: 0;
+    padding: 0;
+}
+
+#projects p {
+    color: var(--text-color);
+    margin: 0;
+    font-weight: normal;
+    text-align: left;
+    font-size: clamp(0.7rem,2vw,1rem);
+    padding: 1em 1rem 1em 1rem;
+}
+
+#projects img {
+    width: 100%;
+    aspect-ratio: calc(2/1);
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+}
+
+#projects .langs-used {
+    list-style: none;
+    padding: 1em;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, calc(3.7em));
+    place-items: center;
+    gap: clamp(0.5em, 1em, 2vw);
+    min-width: 90%;
+}
+
+#projects .langs-used li {
+    background-color: var(--button-hover-color);
+    border: solid 1px var(--light-gray-color 98900);
+    text-align: center;
+    font-weight: normal;
+    font-size: clamp(0.7rem,2vw,1rem);
+    color: var(--text-color-bright);
+    padding: 0.2em;
+    width: 100%;
+    height: 1.5em;
+    border-radius: 5px;
+}
+
+#about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-me article {
+    font-size: clamp(0.7rem,3vw,1.5rem);
+    width: 60%;
+    min-width: 20em;
+}
+
+#about-me hr {
+    border: none;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+@media (max-width: 1456px) {
+    #hero {
+        flex-direction: column;
+        gap: 1%;
+        margin-bottom: 10%;
+    }
+    #big-logo {
+        font-size: clamp(3rem, 20vw, 12rem);
+        width: 100%;
+    }
+    #about-me {
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr 7fr;
+    }
+    #hero-text {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    #hero-text {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 756px) {
+    #about-me {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 13fr 4fr;
+    }
+    #projects ul{
+        grid-template-columns: 1fr;
+        width: 70%;
+    }
+    #projects li:nth-child(even) {
+        --y-offset: 0px;
+    }
+}
+
+@media (max-width: 376px) {
+}
